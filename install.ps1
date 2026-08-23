@@ -181,7 +181,7 @@ function Ensure-DeployKey {
             -ItemType Directory `
             -Path $sshDirectory `
             -Force |
-            Out-Null
+        Out-Null
     }
 
     if (-not (Test-Path -LiteralPath $privateKey)) {
@@ -236,7 +236,7 @@ function New-GitSshWrapper {
         -ItemType Directory `
         -Force `
         -Path $wrapperDir |
-        Out-Null
+    Out-Null
 
     $wrapperPath = Join-Path $wrapperDir "git-ssh.cmd"
 
@@ -490,7 +490,7 @@ function New-DesktopShortcut {
     )
 
     $desktopPath = [Environment]::GetFolderPath("Desktop")
-    $shortcutPath = Join-Path $desktopPath "CR自動排班.lnk"
+    $shortcutPath = Join-Path $desktopPath "Auto Scheduler.lnk"
 
     $shell = New-Object -ComObject WScript.Shell
     $shortcut = $shell.CreateShortcut($shortcutPath)
@@ -500,7 +500,7 @@ function New-DesktopShortcut {
     $shortcut.TargetPath = "powershell.exe"
     $shortcut.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$LauncherPath`""
     $shortcut.WorkingDirectory = $ProjectPath
-    $shortcut.Description = "外科CR自動排班通工具"
+    $shortcut.Description = "Auto Scheduler"
 
     if (Test-Path -LiteralPath $iconPath) {
         $shortcut.IconLocation = "$iconPath,0"
@@ -653,7 +653,8 @@ if (Test-Path -LiteralPath $InstallPath) {
                 $Branch
             )
 
-        } finally {
+        }
+        finally {
             Pop-Location
         }
     }
@@ -669,7 +670,7 @@ else {
             -ItemType Directory `
             -Path $parent `
             -Force |
-            Out-Null
+        Out-Null
     }
 
     Invoke-GitCloneWithDeployKey `
