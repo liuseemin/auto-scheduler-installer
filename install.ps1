@@ -624,7 +624,8 @@ if (Test-Path -LiteralPath $InstallPath) {
         Invoke-GitCloneWithDeployKey `
             -RepositoryUrl $RepositoryUrl `
             -InstallPath $InstallPath `
-            -PrivateKey $deployKey.PrivateKey
+            -PrivateKey $deployKey.PrivateKey `
+            -Branch $Branch
     }
     elseif (Test-Path -LiteralPath $gitFolder) {
         # Configure this repository to always use its dedicated deploy key.
@@ -676,7 +677,8 @@ else {
     Invoke-GitCloneWithDeployKey `
         -RepositoryUrl $RepositoryUrl `
         -InstallPath $InstallPath `
-        -PrivateKey $deployKey.PrivateKey
+        -PrivateKey $deployKey.PrivateKey `
+        -Branch $Branch
 }
 
 # Persist the deploy-key SSH command inside this repository only.
