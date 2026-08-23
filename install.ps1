@@ -1,4 +1,4 @@
-# use: powershell.exe -ExecutionPolicy Bypass -File <script> to avoid execution policy issues
+﻿# use: powershell.exe -ExecutionPolicy Bypass -File <script> to avoid execution policy issues
 
 [CmdletBinding()]
 param(
