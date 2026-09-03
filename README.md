@@ -1,3 +1,6 @@
+<!-- create link to README_EN.md -->
+[English](README_EN.md)
+
 # 📦 自動化排班程式安裝
 
 這個公開 repository 提供 `auto-scheduler` 的 Windows 安裝腳本。安裝腳本會從 GitHub 下載專案、設定專用 SSH Deploy Key、安裝 `uv`、同步 Python 環境，並在桌面建立啟動捷徑。
